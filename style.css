@@ -223,3 +223,17 @@ body {
       flex: 0 0 100%;
   }
 }
+
+
+@media (max-width: 768px) {
+  .card img {
+    height: 100px;
+    width: 100%;
+    max-width: 100%; 
+  }
+
+  .card {
+    flex: 0 0 100%; 
+    margin-right: 0;
+  }
+}

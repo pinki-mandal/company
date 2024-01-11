@@ -1,7 +1,8 @@
 
 
 let currentIndex = 0;
-const intervalTime = 1000; 
+const intervalTime = 1000;
+const maxSlides = 9; 
 
 function changeSlide(direction) {
   const carouselWrapper = document.getElementById('carouselWrapper');
@@ -13,11 +14,14 @@ function changeSlide(direction) {
   const translateValue = -currentIndex * slideWidth;
 
   carouselWrapper.style.transform = `translateX(${translateValue}px)`;
+
+  if (currentIndex + 1 === maxSlides) {
+    clearInterval(intervalId);
+  }
 }
 
+const intervalId = setInterval(() => changeSlide(1), intervalTime);
 
-
-setInterval(() => changeSlide(1), intervalTime);
 
 
 
